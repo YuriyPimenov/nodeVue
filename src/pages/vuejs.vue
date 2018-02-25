@@ -1,5 +1,9 @@
 <template>
-  <router-view></router-view>
+	<div>
+		<p>
+			VUEJS
+		</p>
+	</div>
 </template>
 
 <script>
