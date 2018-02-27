@@ -10,20 +10,8 @@ app.use(bodyParser.json())
 app.use('/dist',express.static('dist'))
 
 //Для разработки, чтобы не перезапускать наш сервер
-import webpack from 'webpack'
-import webpackMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpackConfig from '../webpack.config.dev'
-
-if(process.env.NODE_ENV === 'development'){
-	const compiler = webpack(webpackConfig)
-	app.use(webpackMiddleware(compiler,{
-		hot:true,
-		publicPath:webpackConfig.output.publicPath,
-		noInfo:true
-	}))
-	app.use(webpackHotMiddleware(compiler))
-}
+import webpackDevConfig from './webpackDevConfig.js'
+webpackDevConfig(app);
 
 app.get('/*', (req,res) => {
 	res.sendFile(path.join(__dirname, '../index.html'))
