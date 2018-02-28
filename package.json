@@ -5,6 +5,9 @@
   "author": "Pimenov",
   "license": "MIT",
   "private": true,
+  "engines":{
+    "node":"7.10.1"
+  },
   "scripts": {
     "heroku-postbuild": "npm run build",
     "dev": "cross-env NODE_ENV=development PORT=5000 nodemon --config nodemon.json --watch server --exec babel-node server/index.js",
@@ -26,9 +29,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-env": "^1.6.1",    
     "css-loader": "^0.28.10",
     "file-loader": "^1.1.9",
     "nodemon": "^1.15.1",
