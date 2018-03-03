@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import bodyParser from 'body-parser'
 import Debug from 'debug'
+import morgan from 'morgan'
 
 import auth from './routes/auth.js'
 
@@ -11,6 +12,7 @@ const app = express()
 
 
 app.use(bodyParser.json())
+app.use(morgan('dev'))
 app.use('/dist',express.static('dist'))
 
 //Для разработки, чтобы не перезапускать наш сервер

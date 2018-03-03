@@ -1,4 +1,5 @@
 import axios from 'axios'
+import VueNotifications from 'vue-notifications'
 //Состаяние
 const state = {
 	user:null
@@ -21,7 +22,7 @@ const actions = {
 				console.log('ошибка = ',err)
 			})
 		}else{
-			console.log('error waga')
+			VueNotifications.error({message:'Неверные данные!'})
 		}
 		
 	}
